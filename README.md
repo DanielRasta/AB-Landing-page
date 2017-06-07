@@ -4,7 +4,7 @@ A/B..n testing for multiple campaigns and lead generation
 It's a small (free and open source) system to help you do the following:
 1. Track offering of ads in FB - that's by Mark Zukerberg, not me :)
 2. Display different landing pages for different offerings
-3. "Color" the users for future remarketing
+3. "Mark" the users for future remarketing
 4. Collect leads
 
 It's all developed in NodeJS and can be of use to any startup company.
