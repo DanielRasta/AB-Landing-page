@@ -16,6 +16,14 @@ router.get('/my_session', function(req, res, next) {
   res.send(req.session);
 });
 
+
+/* GET session. */
+router.get('/thankstest', function(req, res, next) {
+  var template_path = path.join(__dirname, '..', 'views', 'thankyou.html');
+  	res.sendFile(template_path);
+});
+
+
 /* POST register to mailing list. */
 router.post('/register', function(req, res) {
     
