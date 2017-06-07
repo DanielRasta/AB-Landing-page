@@ -9,19 +9,14 @@ subscribe_to_list = function (p_email,p_name,p_templateid) {
 	    email: { email: p_email },
 	    merge_vars: {
 	        EMAIL: p_email,
-	        FNAME: p_name,
-	        vars: [
-                        {
-                            "name": "template",
-                            "content": p_templateid
-                        }
-                    ]
+	        NAME: p_name,
+	        TEMPLATE: p_templateid
 	    }
 	};
 
 	// submit subscription request to mail chimp
 	MC.lists.subscribe(mcReq, function(data) {
-	    console.log(data);
+	    // console.log(data);
 	}, function(error) {
 	    console.log(error);
 	});
