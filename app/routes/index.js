@@ -10,10 +10,18 @@ router.get('/', function(req, res, next) {
   res.sendFile(template_path);
 });
 
-
-/* GET home page. */
+/* GET session. */
 router.get('/my_session', function(req, res, next) {
   res.send(req.session);
+});
+
+/* POST register to mailing list. */
+router.post('/register', function(req, res) {
+    var email = req.body.email;
+    console.log(email," ", req.session.template_id)
+
+    var template_path = path.join(__dirname, '..', 'views', 'thankyou.html');
+  	res.sendFile(template_path);
 });
 
 
