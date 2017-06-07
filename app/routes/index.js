@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var lead_list = require('./../list_subscriber')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -17,12 +18,11 @@ router.get('/my_session', function(req, res, next) {
 
 /* POST register to mailing list. */
 router.post('/register', function(req, res) {
-    var email = req.body.email;
-    console.log(email," ", req.session.template_id)
+    
+    lead_list(req.body.email,req.body.fullname,req.session.template_id)
 
     var template_path = path.join(__dirname, '..', 'views', 'thankyou.html');
   	res.sendFile(template_path);
 });
-
 
 module.exports = router;
